@@ -175,7 +175,7 @@ public class Vista extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(() -> new Vista().setVisible(true));
     }
-
+// Hola mundo, no cmabien nada
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botonAgregarLibro;
     private javax.swing.JButton botonBuscarLibro;

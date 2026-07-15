@@ -221,6 +221,31 @@ public class AgregarLibroDigital extends javax.swing.JFrame {
             javax.swing.JOptionPane.showMessageDialog(this, "Todos los campos son obligatorios", "Mensaje del Sistema",0);
             return;
         }
+        if (txtCodigoDigital.getText().matches(".*[ñÑ].*")) {
+            javax.swing.JOptionPane.showMessageDialog(this, "No puede contener caracteres [ñÑ], Ingrese de nuevo", "Mensaje del Sistema", 0);
+            return;
+        }
+        try {
+            int anioPublicacion = Integer.parseInt(txtAnioPublicacionDigital.getText());
+            
+            if (anioPublicacion < 0 || anioPublicacion > 2026) {
+                javax.swing.JOptionPane.showMessageDialog(this, "El anio ingresado no es valido", "Mensaje del Sistema",0);
+                return;
+            }
+        } catch (NumberFormatException e) {
+            javax.swing.JOptionPane.showMessageDialog(this, "Ingrese correctamente los digitos", "Mensaje del Sistema",0);
+            return;
+        }
+        try {
+            double tamanoMB = Double.parseDouble(txtTamanioMBDigital.getText());
+            if (tamanoMB < 0) {
+                javax.swing.JOptionPane.showMessageDialog(this, "Ingrese correctamente el tamanio del archivo", "Mensaje del Sistema",0);
+                return;
+            }
+        } catch (NumberFormatException e) {
+            javax.swing.JOptionPane.showMessageDialog(this, "Ingrese correctamente los digitos", "Mensaje del Sistema",0);
+            return;
+        }
         try {
             BufferedWriter bw = new BufferedWriter(new FileWriter("LibrosDigitales.txt", true));
             bw.write(txtCodigoDigital.getText() + ";" +

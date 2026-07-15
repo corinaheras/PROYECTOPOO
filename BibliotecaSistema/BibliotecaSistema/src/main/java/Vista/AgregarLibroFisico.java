@@ -204,12 +204,44 @@ public class AgregarLibroFisico extends javax.swing.JFrame {
             txtTituloFisico.getText().equals("") ||
             txtAnioPublicacionFisico.getText().equals("") ||
             txtPasilloFisico.getText().equals("") ||
-            txtEstanteFisico.getText().equals("")){
+            txtEstanteFisico.getText().equals("") ||
+            txtEstadoFisico.getText().equals("")){
             javax.swing.JOptionPane.showMessageDialog(this, "Todos los campos son obligatorios", "Mensaje del Sistema",0); 
             return;
         }
         
+        if (txtCodigoFisico.getText().matches(".*[ñÑ].*")) {
+            javax.swing.JOptionPane.showMessageDialog(this, "No puede contener caracteres [ñÑ], Ingrese de nuevo", "Mensaje del Sistema", 0);
+            return;
+        }
+        try {
+            int anioPublicacion = Integer.parseInt(txtAnioPublicacionFisico.getText());
+            
+            if (anioPublicacion < 0 || anioPublicacion > 2026) {
+                javax.swing.JOptionPane.showMessageDialog(this, "El anio ingresado no es valido", "Mensaje del Sistema",0);
+                return;
+            }
+        } catch (NumberFormatException e) {
+            javax.swing.JOptionPane.showMessageDialog(this, "Ingrese correctamente los digitos", "Mensaje del Sistema",0);
+            return;
+        }
+        if (txtEstanteFisico.getText().matches(".*[ñÑ].*")) {
+            javax.swing.JOptionPane.showMessageDialog(this, "No puede contener caracteres [ñÑ], Ingrese de nuevo", "Mensaje del Sistema", 0);
+            return;
+        }    
         
+        if (txtPasilloFisico.getText().matches(".*[ñÑ].*")) {
+            javax.swing.JOptionPane.showMessageDialog(this, "No puede contener caracteres [ñÑ], Ingrese de nuevo", "Mensaje del Sistema", 0);
+            return;
+        }
+
+        String estado = txtEstadoFisico.getText().trim();
+        if (!estado.equalsIgnoreCase("Nuevo") &&
+            !estado.equalsIgnoreCase("Buen Estado") &&
+            !estado.equalsIgnoreCase("Deteriorado")) {
+            javax.swing.JOptionPane.showMessageDialog(this, "El estado debe ser: Nuevo, Buen Estado o Deteriorado", "Mensaje del Sistema", 0);
+        return;
+        }
         
         try {
         BufferedWriter bw = new BufferedWriter(new FileWriter("LibrosFisicos.txt", true));
