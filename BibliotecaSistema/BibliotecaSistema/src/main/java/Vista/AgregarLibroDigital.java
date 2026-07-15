@@ -221,14 +221,6 @@ public class AgregarLibroDigital extends javax.swing.JFrame {
             javax.swing.JOptionPane.showMessageDialog(this, "Todos los campos son obligatorios", "Mensaje del Sistema",0);
             return;
         }
-        try{
-            String codigo = Double.parseDouble(txtCodigoDigital.getText());
-            
-            if (precio <=0) {
-                javax.swing.JOptionPane.showMessageDialog(this, "El precio debe ser mayor a cero", "Mensaje del Sistema",0);
-                return;
-            }
-            catch{ 
         try {
             BufferedWriter bw = new BufferedWriter(new FileWriter("LibrosDigitales.txt", true));
             bw.write(txtCodigoDigital.getText() + ";" +
