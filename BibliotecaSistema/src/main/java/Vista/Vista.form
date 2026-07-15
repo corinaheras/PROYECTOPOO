@@ -154,7 +154,7 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace pref="158" max="32767" attributes="0"/>
+                  <EmptySpace pref="413" max="32767" attributes="0"/>
                   <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="153" max="-2" attributes="0"/>
               </Group>
@@ -179,7 +179,7 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="SISTEMA DE GESTI&#xd3;N DE BIBLIOTECA"/>
+            <Property name="text" type="java.lang.String" value="RAMA CORINA"/>
           </Properties>
         </Component>
       </SubComponents>
